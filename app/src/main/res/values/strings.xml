@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Compose Basic</string>
+    <string name="birtday_image">Birtday Image</string>
+    <string name="happy_birdday">Happy Birtday\n%s</string>
 </resources>
