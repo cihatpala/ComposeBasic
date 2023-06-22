@@ -14,4 +14,8 @@
     <color name="quadrant_3">#FFB69DF8</color>
     <color name="quadrant_4">#FFF6EDFF</color>
 
+    <!-- Business Card App -->
+    <color name="business_background">#FFD2E8D4</color>
+    <color name="green_text_and_logo">#FF006930</color>
+
 </resources>
