@@ -1,14 +1,13 @@
 package com.example.composebasic.activities
 
-import android.graphics.Paint.Align
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.animation.expandVertically
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -21,11 +20,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.composebasic.R
@@ -62,45 +59,116 @@ fun BusinessCardAppAll() {
             horizontalAlignment = Alignment.CenterHorizontally,//Yatayda ortalıyor
             verticalArrangement = Arrangement.Center//Dikeyde ortalıyor.
         ) {
-            Image(
-                painter = painterResource(id = R.drawable.ic_task_completed),
-                contentDescription = "asd",
-                alignment = Alignment.Center,
-                modifier = Modifier.padding(start = 120.dp, end = 120.dp)
-            )
-            Text(
-                text = stringResource(id = R.string.person_name),
-                fontSize = 34.sp,
-                fontWeight = FontWeight.ExtraLight,
-                color = colorResource(id = R.color.black)
-            )
-            Text(
-                text = stringResource(id = R.string.person_job),
-                fontSize = 16.sp,
-                fontWeight = FontWeight.Bold,
-                color = colorResource(id = R.color.green_text_and_logo),
-                textAlign = TextAlign.Justify
-            )
+            PersonNameAndJob()
         }
-
-
-
-
-
 
         Column(
             modifier = Modifier
-                .fillMaxWidth(100f)
-                .weight(30f),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
+                .weight(30f)
+                .align(Alignment.Start)
         ) {
-            Image(
-                painter = painterResource(id = R.drawable.ic_task_completed),
-                contentDescription = "Phone Number"
-            )
+            Row(
+                modifier = Modifier
+                    .weight(20f)
+                    .padding(start = 100.dp)
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.ic_task_completed),
+                    contentDescription = "Phone Number",
+                    modifier = Modifier.padding(9.dp)
+                )
+                Text(
+                    text = "asd",
+                    modifier = Modifier
+                        .align(Alignment.CenterVertically)
+                        .padding(start = 10.dp)
+                )
+            }
+
+            Row(
+                modifier = Modifier
+                    .weight(20f)
+                    .padding(start = 100.dp)
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.ic_task_completed),
+                    contentDescription = "Phone Number",
+                    modifier = Modifier.padding(9.dp)
+                )
+                Text(
+                    text = "asd",
+                    modifier = Modifier
+                        .align(Alignment.CenterVertically)
+                        .padding(start = 10.dp)
+                )
+            }
+
+            Row(
+                modifier = Modifier
+                    .weight(20f)
+                    .padding(start = 100.dp)
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.ic_task_completed),
+                    contentDescription = "Phone Number",
+                    modifier = Modifier.padding(9.dp)
+                )
+                Text(
+                    text = "asd",
+                    modifier = Modifier
+                        .align(Alignment.CenterVertically)
+                        .padding(start = 10.dp)
+                )
+            }
+
+            Row(
+                modifier = Modifier
+                    .weight(20f)
+                    .padding(start = 100.dp)
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.ic_task_completed),
+                    contentDescription = "Phone Number",
+                    modifier = Modifier.padding(9.dp)
+                )
+                Text(
+                    text = "asd",
+                    modifier = Modifier
+                        .align(Alignment.CenterVertically)
+                        .padding(start = 10.dp)
+                )
+            }
+
         }
     }
+}
+
+@Composable
+fun PersoImageAndInfo(modifier: Modifier = Modifier) {
+
+}
+
+@Composable
+fun PersonNameAndJob() {
+    Image(
+        painter = painterResource(id = R.drawable.ic_task_completed),
+        contentDescription = "asd",
+        alignment = Alignment.Center,
+        modifier = Modifier.padding(start = 120.dp, end = 120.dp)
+    )
+    Text(
+        text = stringResource(id = R.string.person_name),
+        fontSize = 34.sp,
+        fontWeight = FontWeight.ExtraLight,
+        color = colorResource(id = R.color.black)
+    )
+    Text(
+        text = stringResource(id = R.string.person_job),
+        fontSize = 16.sp,
+        fontWeight = FontWeight.Bold,
+        color = colorResource(id = R.color.green_text_and_logo),
+        textAlign = TextAlign.Justify
+    )
 }
 
 @Preview(showSystemUi = true, name = "Business Card App")
