@@ -1,4 +1,4 @@
-package com.example.composebasic
+package com.example.composebasic.activities
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -20,10 +20,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.composebasic.R
 import com.example.composebasic.ui.theme.TaskManagerTheme
 
 class TaskManagerFinalScreen : ComponentActivity() {
@@ -73,7 +73,6 @@ fun FinalScreenText(modifier: Modifier = Modifier) {
         //Set the first Text composable to a Bold font weight, 24dp padding top, and 8dp padding bottom.
         Text(
             modifier = modifier.padding(top = 24.dp, bottom = 8.dp),
-            textAlign = TextAlign.Right,
             fontWeight = FontWeight.Bold,
             text = stringResource(id = R.string.all_task_completed)
         )

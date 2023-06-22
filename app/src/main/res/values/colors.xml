@@ -7,4 +7,11 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Compose Quadrant App Colors -->
+    <color name="quadrant_1">#FFEADDFF</color>
+    <color name="quadrant_2">#FFD0BCFF</color>
+    <color name="quadrant_3">#FFB69DF8</color>
+    <color name="quadrant_4">#FFF6EDFF</color>
+
 </resources>
