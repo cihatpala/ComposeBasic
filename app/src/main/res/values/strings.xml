@@ -3,7 +3,7 @@
     <string name="birtday_image">Birtday Image</string>
     <string name="happy_birdday">Happy Birtday\n%s</string>
 
-    //Learn Together App (unit-1-pathway-3 section 5 exercise 1)
+    <!--Learn Together App (unit-1-pathway-3 section 5 exercise 1)-->
     <string name="title_activity_learn_together">LearnTogether</string>
     <string name="learn_together_header_image">Learn Together Header Image </string>
     <string name="learn_together_head_text">Jetpack Compose tutorial</string>
@@ -11,8 +11,20 @@
     <string name="learn_together_detail_text">In this tutorial, you build a simple UI component with declarative functions. You call Compose functions to say what elements you want and the Compose compiler does the rest. Compose is built around Composable functions. These functions let you define your app\'s UI programmatically because they let you describe how it should look and provide data dependencies, rather than focus on the process of the UI\'s construction, such as initializing an element and then attaching it to a parent. To create a Composable function, you add the @Composable annotation to the function name.</string>
     <string name="title_activity_task_manager_final_screen">TaskManagerFinalScreen</string>
 
-    //Task Manager Final Screen (unit-1-pathway-3 section 5 exercise 2)
+    <!--Task Manager Final Screen (unit-1-pathway-3 section 5 exercise 2)-->
     <string name="all_task_completed">All task completed</string>
     <string name="nice_work">Nice work!</string>
+
+    <!--Compose Quadrant (unit-1-pathway-3 section 5 exercise 3)-->
+    <string name="title_activity_compose_quadrant">ComposeQuadrant</string>
+    <string name="text_composable">Text composable</string>
+    <string name="text_composable_desc">Displays text and follows the recommended Material Design guidelines.</string>
+    <string name="image_composable">Image composable</string>
+    <string name="image_composable_desc">Creates a composable that lays out and draws a given Painter class object.</string>
+    <string name="row_composable">Row composable</string>
+    <string name="row_composable_desc">A layout composable that places its children in a horizontal sequence.</string>
+    <string name="column_composable">Column composable</string>
+    <string name="column_composable_desc">A layout composable that places its children in a vertical sequence.</string>
+
 
 </resources>
