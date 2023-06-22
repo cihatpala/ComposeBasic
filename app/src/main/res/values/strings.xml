@@ -26,5 +26,10 @@
     <string name="column_composable">Column composable</string>
     <string name="column_composable_desc">A layout composable that places its children in a vertical sequence.</string>
 
+    <!--Compose Quadrant (unit-1-pathway-3 section 6)-->
+    <string name="title_activity_business_card_app">BusinessCardApp</string>
+    <string name="person_name">Cihat PALA</string>
+    <string name="person_job">Software Engineer, Android Specialist</string>
+
 
 </resources>
