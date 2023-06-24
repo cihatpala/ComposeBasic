@@ -1,6 +1,6 @@
 package com.example.composebasic.unit2.pathway1.Path4
 
-/**A-unit2-pathway1 path4 Use classes and objects in Kotlin devamı (8. kısım ve sonrası)**/
+/**A-unit2-pathway1 path4 Use classes and objects in Kotlin devamı (8. kısım)**/
 //A_8 Visibility modifiers
 //A_8.1 public(default modifiers)
 //A_8.2 private(Aynı sınıftan veya kaynak dosyadan erişim)
@@ -78,13 +78,14 @@ class SmartHomeA(
         smartLightDeviceA.turnOff()
     }
 }
+
 //Modifiers constructor'da da kullanılabilir
-open class SmartDeviceX protected constructor (val name: String, val category: String) {
+open class SmartDeviceX protected constructor(val name: String, val category: String) {
 
 }
 
 //classın da modifiers'ı olabilir.
-internal open class SmartDeviceY protected constructor (val name: String, val category: String) {
+internal open class SmartDeviceY protected constructor(val name: String, val category: String) {
 
 }
 
