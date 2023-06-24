@@ -1,4 +1,4 @@
-package com.example.composebasic.unit2.pathway1
+package com.example.composebasic.unit2.pathway1.Path4
 
 /**A-unit2-pathway1 path4 Use classes and objects in Kotlin**/
 //A_1 Begin (Encapsulation, Abstraction, Inheritance ve Polymorphism hakkında genel bilgiler verilir.)
@@ -7,7 +7,6 @@ package com.example.composebasic.unit2.pathway1
 //A_4 Define class methods (Bkz. A_4.1 , A_4.2)
 //A_5 Define class properties (Bkz. A_5.1, A_5.2, A_5.3, A_5.4, A_5.6)
 //A_6 Define a constructor (Bkz. A_6.1, A_6.2, A_6.3)
-//A_7 Implement a relationship between classes
 fun main() {
     /**A_3 Create an instance of a class**/
     //sabit bir değer için val, değişken bir değer için var ile tanımlanır.
