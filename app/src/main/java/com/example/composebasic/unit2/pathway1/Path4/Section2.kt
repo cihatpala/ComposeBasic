@@ -1,6 +1,6 @@
 package com.example.composebasic.unit2.pathway1.Path4
 
-/**A-unit2-pathway1 path4 Use classes and objects in Kotlin devamı (7. kısım ve sonrası)**/
+/**A-unit2-pathway1 path4 Use classes and objects in Kotlin devamı (7. kısım)**/
 //A_7 Classlar arası ilişkiler ve kalıtım(Bkz. A_7.1, A_7.2, A_7.3, A_7.4, A_7.5)
 //A_7.2 -> IS-A ilişkisi
 //A_7.3 -> HAS-A relationships
