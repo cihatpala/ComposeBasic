@@ -31,5 +31,10 @@
     <string name="person_name">Cihat PALA</string>
     <string name="person_job">Software Engineer, Android Specialist</string>
 
+    <!--Dice Roller App (unit-2-pathway-2)-->
+    <string name="title_activity_dice_roller">DiceRoller</string>
+    <string name="roll">Roll</string>
+    <string name="dice_content_desc">Dice Image</string>
+
 
 </resources>
