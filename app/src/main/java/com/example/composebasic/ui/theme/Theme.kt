@@ -14,7 +14,6 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
-import com.example.composebasic.activities.ComposeQuadrant
 
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
@@ -231,7 +230,7 @@ fun DiceRollerTheme(
 }
 
 @Composable
-fun LimonadeTheme(
+fun LemonadeTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,

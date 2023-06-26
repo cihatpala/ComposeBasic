@@ -46,6 +46,7 @@
     <string name="lemon">Lemon</string>
     <string name="glass_of_lemonade">Glass of lemonade</string>
     <string name="empty_class">Empty glass</string>
+    <string name="title_activity_lemonade_solution">LemonadeSolution</string>
 
 
 </resources>
