@@ -20,6 +20,10 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -52,6 +56,35 @@ class ArtSpaceApp : ComponentActivity() {
 @Composable
 fun ArtSpace(modifier: Modifier = Modifier) {
     val startAndEndPadding = 20.dp
+    val artDataList: ArrayList<ArtModel> = ArrayList()
+    artDataList.add(
+        ArtModel(
+            "Gezinti (La Promenade)",
+            "Claude Monet",
+            R.drawable.promenade,
+            "1875"
+        )
+    )
+    artDataList.add(
+        ArtModel(
+            "Mona Lisa",
+            "Leonardo di ser Piero da Vinci",
+            R.drawable.mona_lisa,
+            "1503"
+        )
+    )
+    artDataList.add(
+        ArtModel(
+            "Nilüferler (Les Nymphéas, Water Lilies)",
+            "Claude Monet",
+            R.drawable.water_lilies,
+            "1895 – 1926"
+        )
+    )
+    var index by remember { mutableStateOf(0) }
+    println("artDataList: ${artDataList.size}")
+    println("index:  $index")
+
     Column(
         modifier = modifier
             .fillMaxSize(100f)
@@ -63,9 +96,10 @@ fun ArtSpace(modifier: Modifier = Modifier) {
                 .weight(75f)
                 .padding(startAndEndPadding)
                 .background(color = colorResource(id = R.color.white))
-                .shadow(3.dp, RoundedCornerShape(3.dp))
+                .shadow(3.dp, RoundedCornerShape(3.dp)),
+            contentAlignment = Alignment.Center
         ) {
-            CustomArtImageArea(modifier, R.drawable.water_lilies)
+            CustomArtImageArea(modifier, artDataList.get(index).artImageSource)
         }
 
         Column(
@@ -78,9 +112,9 @@ fun ArtSpace(modifier: Modifier = Modifier) {
         ) {
             CustomArtDescriptionArea(
                 modifier,
-                textSourceArt = R.string.art_water_lilies,
-                textSourceArtist = R.string.artist_monet,
-                textSourceYear = R.string.art_water_lilies_year,
+                artName = artDataList.get(index).artName,
+                artistName = artDataList.get(index).artistName,
+                artYear = artDataList.get(index).artYear,
             )
         }
         Row(
@@ -93,8 +127,20 @@ fun ArtSpace(modifier: Modifier = Modifier) {
             verticalAlignment = Alignment.Bottom,
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            CustomArtButton(modifier, R.string.art_previous)
-            CustomArtButton(modifier, R.string.art_next)
+            println("Before Button index: $index ")
+            CustomArtButton(modifier, R.string.art_previous, onClick = {
+                println("1 After Button index: $index ")
+                if ((index - 1 != artDataList.size - 1) && index != 0) {
+                    index -= 1
+                } else if (index == 0) { //İlk elemansa geri butonu geriye doğru sararak çalışsın.
+                    index = artDataList.size - 1
+                } else index = 0
+            })
+            CustomArtButton(modifier, R.string.art_next, onClick = {
+                println("2 After Button index: $index ")
+                if (index != artDataList.size - 1) index += 1
+                else index = 0
+            })
         }
     }
 }
@@ -103,7 +149,7 @@ fun ArtSpace(modifier: Modifier = Modifier) {
 fun CustomArtImageArea(modifier: Modifier, imageSource: Int) {
     Image(
         modifier = modifier
-            .padding(30.dp)
+            .padding(20.dp)
             .size(500.dp)
             .clip(RoundedCornerShape(10.dp)),
         painter = painterResource(imageSource),
@@ -114,9 +160,9 @@ fun CustomArtImageArea(modifier: Modifier, imageSource: Int) {
 @Composable
 fun CustomArtDescriptionArea(
     modifier: Modifier,
-    textSourceArt: Int,
-    textSourceArtist: Int,
-    textSourceYear: Int
+    artName: String,
+    artistName: String,
+    artYear: String
 ) {
     Column(
         modifier = modifier
@@ -125,7 +171,7 @@ fun CustomArtDescriptionArea(
 
         ) {
         Text(
-            text = stringResource(id = textSourceArt),
+            text = artName,
             modifier = modifier.padding(
                 top = 10.dp,
                 bottom = 10.dp,
@@ -135,12 +181,12 @@ fun CustomArtDescriptionArea(
         )
         Row() {
             Text(
-                text = stringResource(id = textSourceArtist),
+                text = artistName,
                 fontWeight = FontWeight.Bold,
                 modifier = modifier.padding(bottom = 10.dp, start = 30.dp)
             )
             Text(
-                text = "(" + stringResource(id = textSourceYear) + ")",
+                text = "($artYear)",
                 modifier = modifier.padding(end = 30.dp)
             )
         }
@@ -148,15 +194,18 @@ fun CustomArtDescriptionArea(
 }
 
 @Composable
-fun CustomArtButton(modifier: Modifier, textSource: Int) {
+fun CustomArtButton(
+    modifier: Modifier,
+    textSource: Int,
+    onClick: () -> Unit,
+) {
     Button(
         colors = ButtonDefaults.buttonColors(
             containerColor = colorResource(id = R.color.art_button_background),//buton rengi
             contentColor = colorResource(id = R.color.white) //yazı rengi
         ),
-        onClick = {
-            //TODO
-        }, modifier = modifier
+        onClick = onClick,
+        modifier = modifier
             .clip(shape = RoundedCornerShape(10.dp))
             .size(width = 110.dp, height = 42.dp)
     ) {

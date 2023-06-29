@@ -60,14 +60,6 @@
     <string name="title_activity_art_space_app">ArtSpaceApp</string>
     <string name="art_previous">Previous</string>
     <string name="art_next">Next</string>
-    <string name="artist_monet">Claude Monet</string>
-    <string name="art_la_promenade">Gezinti (La Promenade)</string>
-    <string name="art_la_promenade_year">1875</string>
-    <string name="art_water_lilies">Nilüferler (Les Nymphéas, Water Lilies)</string>
-    <string name="art_water_lilies_year">1895 – 1926</string>
-    <string name="artist_davinci">Leonardo di ser Piero da Vinci-</string>
-    <string name="art_mona_lisa">Mona Lisa</string>
-    <string name="art_mona_lisa_year">1503</string>
 
 
 </resources>
