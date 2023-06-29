@@ -112,7 +112,7 @@ fun TipTimeLayoutX() {
     var tipInput by remember { mutableStateOf("") }
     val tipPercent = tipInput.toDoubleOrNull() ?: 0.0
     val amount = amountInput.toDoubleOrNull() ?: 0.0 //amountInput = it kodu ile güncelleniyor.
-    val tip = calculateTip(amount, tipPercent, roundUp)
+    val tip = calculateTipX(amount, tipPercent, roundUp)
     Column(
         modifier = Modifier
             .padding(40.dp)
@@ -171,7 +171,7 @@ fun TipTimeLayoutX() {
 }
 
 //A_9
-private fun calculateTip(
+fun calculateTipX(
     amount: Double, tipPercent: Double = 15.0,
     roundUp: Boolean//B_6
 ): String {

@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+
     <!-- Compose Quadrant App Colors -->
     <color name="quadrant_1">#FFEADDFF</color>
     <color name="quadrant_2">#FFD0BCFF</color>
@@ -17,5 +18,9 @@
     <!-- Business Card App -->
     <color name="business_background">#FFD2E8D4</color>
     <color name="green_text_and_logo">#FF006930</color>
+
+    <!-- Art Space App -->
+    <color name="art_description_background">#ECEBF4</color>
+    <color name="art_button_background">#FF495D92</color>
 
 </resources>
