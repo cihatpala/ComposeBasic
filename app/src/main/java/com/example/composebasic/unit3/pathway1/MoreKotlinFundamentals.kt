@@ -6,7 +6,7 @@ package com.example.composebasic.unit3.pathway1
 //A_3 Use an enum class
 //A_4 Use a data class
 //A_5 Use a singleton object
-//A_6 Extend classes with new properties and methods
+//A_6 Extend classes with new properties and methods (A_6.1 -> Extend properties, A_6.2 -> Extend function)
 fun main() {
     //A_2.2 Generic kullanılan classın main içinde kullanımı
     //A_3 Difficulty Enumunun kullanılması
@@ -30,6 +30,11 @@ fun main() {
     println("${StudentProgress.answered} of ${StudentProgress.total} answered.")
 
     println("A_5: ${Quiz.answered} of ${Quiz.total} answered.")
+
+    //A_6.1 Extended propertiesin main içinde kullanımı
+    println("A_6.1: ${Quiz.progressText}")
+    //A_6.2 Extended functionun main içinde kullanımı
+    Quiz.printProgressBar()
 
 }
 
@@ -79,6 +84,7 @@ object StudentProgress {
     var answered: Int = 3
 }
 
+
 //A_5
 class Quiz {
     val question1 = QuestionDataClass<String>("Quoth the raven ___", "nevermore", Difficulty.MEDIUM)
@@ -92,4 +98,16 @@ class Quiz {
         var total: Int = 10
         var answered: Int = 3
     }
+}
+
+//A_6.1
+val Quiz.StudentProgress.progressText: String
+    get() = "${answered} of ${total} answered"
+
+//A_6.2
+fun Quiz.StudentProgress.printProgressBar() {
+    repeat(Quiz.answered) { print("▓") }
+    repeat(Quiz.total - Quiz.answered) { print("▒") }
+    println()
+    println(Quiz.progressText)
 }
