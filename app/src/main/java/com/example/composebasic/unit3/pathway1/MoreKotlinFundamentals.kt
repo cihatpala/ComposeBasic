@@ -7,6 +7,8 @@ package com.example.composebasic.unit3.pathway1
 //A_4 Use a data class
 //A_5 Use a singleton object
 //A_6 Extend classes with new properties and methods (A_6.1 -> Extend properties, A_6.2 -> Extend function)
+//A_7 Rewrite extension functions using interfaces
+//A_8 Use scope functions to access class properties and methods (Bkz. A_8.1 -> let() kullanımı, A_8.2 -> apply() kullanımı)
 fun main() {
     //A_2.2 Generic kullanılan classın main içinde kullanımı
     //A_3 Difficulty Enumunun kullanılması
@@ -32,9 +34,27 @@ fun main() {
     println("A_5: ${Quiz.answered} of ${Quiz.total} answered.")
 
     //A_6.1 Extended propertiesin main içinde kullanımı
-    println("A_6.1: ${Quiz.progressText}")
+//    println("A_6.1: ${Quiz.progressText}") // A_7 ile birlikte kapandı
     //A_6.2 Extended functionun main içinde kullanımı
-    Quiz.printProgressBar()
+//    Quiz.printProgressBar() // A_7 ile birlikte kapandı
+
+    //A_7'nin çalıştırılması
+    println("A_6.1: ${Quiz().progressText}")
+    Quiz().printProgressBar()
+
+    //A_8.1 let kullanımının çağırımı
+    println("A_8.1")
+    val quiz = Quiz()
+    quiz.printQuiz()
+
+    //A_8.2 apply() kullanımının çağırımı
+    println("A_8.2")
+    val quiz1 = Quiz().apply {
+        printQuiz()
+    }
+    Quiz().apply {
+        printQuiz()
+    }
 
 }
 
@@ -86,28 +106,70 @@ object StudentProgress {
 
 
 //A_5
-class Quiz {
+class Quiz : ProgressPrintable {
     val question1 = QuestionDataClass<String>("Quoth the raven ___", "nevermore", Difficulty.MEDIUM)
     val question2 =
         QuestionDataClass<Boolean>("The sky is green. True or false", false, Difficulty.EASY)
     val question3 =
         QuestionDataClass<Int>("How many days are there between full moons?", 28, Difficulty.HARD)
 
+    //A_7 override edilmesi
+    override val progressText: String
+        get() = "${answered} of ${total} answered"
+
+    override fun printProgressBar() {
+        repeat(Quiz.answered) { print("▓") }
+        repeat(Quiz.total - Quiz.answered) { print("▒") }
+        println()
+        println(progressText)
+    }
+
     //A_5
     companion object StudentProgress {
         var total: Int = 10
         var answered: Int = 3
     }
+
+    //A_8.1
+    fun printQuiz() {
+        question1.let {
+            println(it.questionText)
+            println(it.answer)
+            println(it.difficulty)
+        }
+        println()
+        question2.let {
+            println(it.questionText)
+            println(it.answer)
+            println(it.difficulty)
+        }
+        println()
+        question3.let {
+            println(it.questionText)
+            println(it.answer)
+            println(it.difficulty)
+        }
+        println()
+    }
 }
 
-//A_6.1
-val Quiz.StudentProgress.progressText: String
-    get() = "${answered} of ${total} answered"
+//A_6.1 , A_7 ile birlikte kaldırılabilir
+//val Quiz.StudentProgress.progressText: String
+//    get() = "${answered} of ${total} answered"
 
-//A_6.2
-fun Quiz.StudentProgress.printProgressBar() {
-    repeat(Quiz.answered) { print("▓") }
-    repeat(Quiz.total - Quiz.answered) { print("▒") }
-    println()
-    println(Quiz.progressText)
+//A_6.2, A_7 ile birlikte kaldırıldı.
+//fun Quiz.StudentProgress.printProgressBar() {
+//    repeat(Quiz.answered) { print("▓") }
+//    repeat(Quiz.total - Quiz.answered) { print("▒") }
+//    println()
+//    println(progressText)
+//}
+
+//A_7
+interface ProgressPrintable {
+    val progressText: String
+    fun printProgressBar()
 }
+
+
+
