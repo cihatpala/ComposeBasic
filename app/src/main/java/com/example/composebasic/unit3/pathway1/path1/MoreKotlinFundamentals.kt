@@ -1,4 +1,4 @@
-package com.example.composebasic.unit3.pathway1
+package com.example.composebasic.unit3.pathway1.path1
 
 /**A-unit3-pathway1 More Kotlin fundamentals **/
 //A_1 Introduction
@@ -115,11 +115,11 @@ class Quiz : ProgressPrintable {
 
     //A_7 override edilmesi
     override val progressText: String
-        get() = "${answered} of ${total} answered"
+        get() = "$answered of $total answered"
 
     override fun printProgressBar() {
-        repeat(Quiz.answered) { print("▓") }
-        repeat(Quiz.total - Quiz.answered) { print("▒") }
+        repeat(answered) { print("▓") }
+        repeat(total - answered) { print("▒") }
         println()
         println(progressText)
     }
