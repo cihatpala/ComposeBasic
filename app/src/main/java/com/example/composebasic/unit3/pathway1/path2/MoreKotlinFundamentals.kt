@@ -1,6 +1,7 @@
-package com.example.composebasic.unit3.pathway1.path1
+package com.example.composebasic.unit3.pathway1.path2
 
-/**A-unit3-pathway1 More Kotlin fundamentals **/
+/** unit3-pathway1 More Kotlin fundamentals **/
+/** Path2-A Generics, objects, and extensions **/
 //A_1 Introduction
 //A_2 Generics, objects and extensions (Bkz. A_2.1, A_2.2)
 //A_3 Use an enum class

@@ -82,8 +82,6 @@ fun ArtSpace(modifier: Modifier = Modifier) {
         )
     )
     var index by remember { mutableStateOf(0) }
-    println("artDataList: ${artDataList.size}")
-    println("index:  $index")
 
     Column(
         modifier = modifier
@@ -127,9 +125,7 @@ fun ArtSpace(modifier: Modifier = Modifier) {
             verticalAlignment = Alignment.Bottom,
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            println("Before Button index: $index ")
             CustomArtButton(modifier, R.string.art_previous, onClick = {
-                println("1 After Button index: $index ")
                 if ((index - 1 != artDataList.size - 1) && index != 0) {
                     index -= 1
                 } else if (index == 0) { //İlk elemansa geri butonu geriye doğru sararak çalışsın.
@@ -137,7 +133,6 @@ fun ArtSpace(modifier: Modifier = Modifier) {
                 } else index = 0
             })
             CustomArtButton(modifier, R.string.art_next, onClick = {
-                println("2 After Button index: $index ")
                 if (index != artDataList.size - 1) index += 1
                 else index = 0
             })
