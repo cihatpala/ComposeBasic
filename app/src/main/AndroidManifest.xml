@@ -13,6 +13,17 @@
         android:theme="@style/Theme.ComposeBasic"
         tools:targetApi="31">
         <activity
+            android:name=".unit3.pathway2.path2.ScrollableList"
+            android:exported="true"
+            android:label="@string/title_activity_scrollable_list"
+            android:theme="@style/Theme.ComposeBasic">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".unit2.pathway3.ArtSpaceApp"
             android:exported="true"
             android:label="@string/title_activity_art_space_app"
