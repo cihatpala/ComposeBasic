@@ -23,4 +23,8 @@
     <color name="art_description_background">#ECEBF4</color>
     <color name="art_button_background">#FF495D92</color>
 
+    <!-- PracticeBuildAGrid -->
+    <color name="build_grid_background">#FFE6E0EB</color>
+
+
 </resources>

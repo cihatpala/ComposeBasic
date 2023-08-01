@@ -6,4 +6,8 @@
     <dimen name="button_image_width">128dp</dimen>
     <dimen name="button_image_height">160dp</dimen>
 
+    <!-- Pathway2, Path4 SolutionBuildAGrid-->
+    <dimen name="padding_medium">16dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+
 </resources>
