@@ -117,4 +117,17 @@
     <string name="years_old">%d years old</string>
     <string name="expand_button_content_description">See more or less information about a dog.</string>
 
+    <!-- Product Price -->
+    <string name="title_activity_product_price">ProductPrice</string>
+    <string name="fitness_amount">Uygun Fiyat Analizi</string>
+    <string name="sale_price">Satış Fiyatı</string>
+    <string name="vat_ratio">KDV Oranı</string>
+    <string name="commission_ratio">Komisyon Oranı</string>
+    <string name="shipping_amount">Kargo Fiyatı</string>
+    <string name="desired_profit_rate">Beklenen Kar Oranı</string>
+    <string name="estimated_purchase_value">Tahmini Satın Alma Değeri: %s</string>
+    <string name="only_vat_price">KDV Tutarı: %s</string>
+    <string name="only_commission_price">Komisyon Tutarı: %s</string>
+    <string name="money_in_pocket_amount">Cebe Gelen Para: %s</string>
+
 </resources>
