@@ -1,4 +1,4 @@
-package com.example.composebasic.unitx.kokulata
+package com.example.composebasic.unitx.stilits
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -35,9 +35,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.composebasic.R
-import com.example.composebasic.unit2.pathway3.calculateTipX
 import com.example.composebasic.unit3.pathway3.path2.ui.theme.ProductPriceTheme
-import java.text.NumberFormat
 
 class ProductPrice : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -78,8 +76,19 @@ fun ProductPriceLayout() {
     val commissionAmount = calculateOnlycommissionAmount(fullAmount, commissionPercent)
     val moneyInPocketAmount =
         calculateMoneyInPocket(fullAmount, commissionAmount, shippingAmountDouble, vatAmount)
+    var desiredAmount by remember { mutableStateOf("") }
+    desiredAmount = calculateDesiredAmount(moneyInPocketAmount, desiredProfitRatioPercent)
+    val desiredAmountDouble = desiredAmount.toDoubleOrNull() ?: 0.00
 
-    val desiredAmount = calculateDesiredAmount(moneyInPocketAmount,desiredProfitRatioPercent)
+    var desiredAmountReverse by remember { mutableStateOf("") }
+    val desiredAmountReverseAmount = desiredAmountReverse.toDoubleOrNull() ?: 0.00
+
+    var desiredProfitRatioText =
+        calculateDesiredProfitRatio(moneyInPocketAmount, desiredAmountReverseAmount)
+
+    var profitByRatio = calculateProfitByRatio(moneyInPocketAmount, desiredAmountDouble)
+    var profitByAmount = calculateProfitByAmount(moneyInPocketAmount, desiredAmountReverseAmount)
+
     Column(
         modifier = Modifier
             .padding(40.dp)
@@ -160,7 +169,7 @@ fun ProductPriceLayout() {
             ),
             onValueChange = { desiredProfitRatio = it },
             modifier = Modifier
-                .padding(bottom = 10.dp)
+                .padding(bottom = 2.dp)
                 .fillMaxWidth()
         )
 
@@ -171,8 +180,54 @@ fun ProductPriceLayout() {
             ), //A_10.3 formatlama ve EditNumberField içinden alınan tip değerinin
             style = MaterialTheme.typography.displayMedium
         )
-        Spacer(modifier = Modifier.height(10.dp))
 
+        Text(
+            text = stringResource(
+                R.string.profit_amount_by_ratio,
+                profitByRatio
+            ),
+            Modifier.align(Alignment.Start)
+        )
+        Spacer(modifier = Modifier.height(30.dp))
+
+
+        EditNumberFieldProductPrice(
+            label = R.string.estimated_purchase_value_edit,
+            leadingIcon = R.drawable.money,//B_8
+            value = desiredAmountReverse,
+            keyboardOptions = KeyboardOptions(
+                keyboardType = KeyboardType.Number, //A_8.2 sadece numara girilebilsin diye klavye ayarı yapıldı.
+                imeAction = ImeAction.Done //B_5
+            ),
+            onValueChange = { desiredAmountReverse = it },
+            modifier = Modifier
+                .padding(bottom = 2.dp)
+                .fillMaxWidth()
+        )
+
+        Text(
+            text = stringResource(
+                R.string.estimated_profit_ratio_text,
+                desiredProfitRatioText
+            ), //A_10.3 formatlama ve EditNumberField içinden alınan tip değerinin
+            style = MaterialTheme.typography.displayMedium
+        )
+
+        Text(
+            text = stringResource(
+                R.string.profit_amount_by_amount,
+                profitByAmount
+            ),
+            Modifier.align(Alignment.Start)
+        )
+        Spacer(modifier = Modifier.height(30.dp))
+
+        Text(
+            text = stringResource(
+                R.string.general_value
+            ), //A_10.3 formatlama ve EditNumberField içinden alınan tip değerinin
+            style = MaterialTheme.typography.displayMedium
+        )
         Text(
             text = stringResource(
                 R.string.only_vat_price,
@@ -219,7 +274,6 @@ fun EditNumberFieldProductPrice(
     )
 }
 
-
 @Preview(showBackground = true)
 @Composable
 fun ProductPricePreview() {
@@ -227,7 +281,6 @@ fun ProductPricePreview() {
         ProductPriceLayout()
     }
 }
-
 
 fun calculateOnlyVATAmount(
     fullAmount: Double, vatRatio: Double,
@@ -239,8 +292,7 @@ fun calculateOnlyVATAmount(
 fun calculateOnlycommissionAmount(
     fullAmount: Double, commissionRatio: Double,
 ): Double {
-    var commissionPrice = fullAmount * commissionRatio / 100
-    return commissionPrice
+    return fullAmount * commissionRatio / 100
 }
 
 
@@ -248,12 +300,27 @@ fun calculateDesiredAmount(
     moneyInPocket: Double, desiredRatio: Double,
 ): String {
     var desiredAmount = (100 * moneyInPocket) / (desiredRatio + 100)
-    return NumberFormat.getCurrencyInstance().format(desiredAmount)
+    return desiredAmount.toString()
 }
 
 fun calculateMoneyInPocket(
     fullAmount: Double, commissionAmount: Double, shippingAmount: Double, vatAmount: Double,
 ): Double {
-    var desiredAmount = fullAmount - commissionAmount - shippingAmount - vatAmount
-    return desiredAmount
+    return fullAmount - commissionAmount - shippingAmount - vatAmount
+}
+
+fun calculateDesiredProfitRatio(moneyInPocket: Double, desiredAmount: Double): Double {
+    var desiredRatio = (moneyInPocket - desiredAmount) * 100 / desiredAmount
+    return desiredRatio
+}
+
+fun calculateProfitByAmount(
+    moneyInPocketAmount: Double,
+    desiredAmountReverseAmount: Double
+): Double {
+    return moneyInPocketAmount - desiredAmountReverseAmount
+}
+
+fun calculateProfitByRatio(moneyInPocketAmount: Double, desiredAmount: Double): Double {
+    return moneyInPocketAmount - desiredAmount
 }
