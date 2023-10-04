@@ -134,5 +134,14 @@
     <string name="profit_amount_by_ratio">Orana Göre Kâr Tutarı: %s</string>
     <string name="profit_amount_by_amount">Alış Fiyatına Göre Kâr Tutarı: %s</string>
     <string name="general_value">Genel Değerler</string>
+    <string name="title_activity_dessert_click">DessertClickActivity</string>3
+
+    <!-- (unit-4-pathway-1, Path2, Dessert Clicker)-->
+    <string name="app_name_dessert">Dessert Clicker</string>
+    <string name="dessert_sold">Desserts sold</string>
+    <string name="total_revenue">Total Revenue</string>
+    <string name="share">Share</string>
+    <string name="share_text">I\'ve clicked %1$d Desserts for a total of $%2$d #AndroidDessertClicker</string>
+    <string name="sharing_not_available">Sharing Not Available</string>
 
 </resources>
