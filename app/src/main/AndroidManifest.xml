@@ -13,14 +13,22 @@
         android:theme="@style/Theme.ComposeBasic"
         tools:targetApi="31">
         <activity
+            android:name=".unit4.pathway2.path2.CupcakeActivity"
+            android:exported="true"
+            android:label="@string/title_activity_cupcake"
+            android:theme="@style/Theme.ComposeBasic">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".unit4.pathway1.path2.dessertclickapp.DessertClickActivity"
             android:exported="true"
             android:label="@string/title_activity_dessert_click"
             android:theme="@style/Theme.ComposeBasic">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -30,12 +38,8 @@
             android:theme="@style/Theme.ComposeBasic">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
         <activity
             android:name=".unitx.stilits.ProductPrice"
             android:exported="true"
@@ -43,8 +47,6 @@
             android:theme="@style/Theme.ComposeBasic">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -54,8 +56,6 @@
             android:theme="@style/Theme.ComposeBasic">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -65,8 +65,6 @@
             android:theme="@style/Theme.ComposeBasic">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -76,8 +74,6 @@
             android:theme="@style/Theme.ComposeBasic">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -87,8 +83,6 @@
             android:theme="@style/Theme.ComposeBasic">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -98,8 +92,6 @@
             android:theme="@style/Theme.ComposeBasic">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -109,8 +101,6 @@
             android:theme="@style/Theme.ComposeBasic">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -120,8 +110,6 @@
             android:theme="@style/Theme.ComposeBasic">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -131,8 +119,6 @@
             android:theme="@style/Theme.ComposeBasic">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -142,8 +128,6 @@
             android:theme="@style/Theme.ComposeBasic">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -153,8 +137,6 @@
             android:theme="@style/Theme.ComposeBasic">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -164,8 +146,6 @@
             android:theme="@style/Theme.ComposeBasic">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -176,7 +156,6 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -186,8 +165,6 @@
             android:theme="@style/Theme.ComposeBasic">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -197,8 +174,6 @@
             android:theme="@style/Theme.ComposeBasic">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -208,8 +183,6 @@
             android:theme="@style/Theme.ComposeBasic">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>

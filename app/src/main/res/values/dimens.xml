@@ -13,4 +13,7 @@
     <!-- Pathway3, Path2 WoofApp-->
     <dimen name="image_size">64dp</dimen>
 
+    <!-- Unit4 Pathway2, Path2 Cupcake-->
+    <dimen name="thickness_divider">1dp</dimen>
+
 </resources>

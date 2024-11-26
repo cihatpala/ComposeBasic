@@ -102,7 +102,7 @@ fun GreetingTextDouble(modifier: Modifier = Modifier) {
 @Composable
 fun BirtdayCardPreview() {
     HappyBirtdayTheme {
-        GreetingText("Happy Birthday Sam!", "- From Cihat")
+        GreetingText("Happy Birthday Sam!", "- From Z")
     }
 }
 
